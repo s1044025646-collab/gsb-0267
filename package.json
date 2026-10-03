@@ -1,0 +1,24 @@
+{
+  "name": "mini-go-server",
+  "version": "1.0.0",
+  "description": "双人小棋盘（5/9/13 路）围棋提子与单劫合法落子后端：API 与 CLI",
+  "private": true,
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.json && node --test \"dist/test/**/*.test.js\"",
+    "start": "node --no-warnings dist/server/api.js",
+    "serve": "npm run build && npm start",
+    "cli": "node --no-warnings dist/cli/cli.js",
+    "demo": "node --no-warnings dist/demo/demo.js",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}
